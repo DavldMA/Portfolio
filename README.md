@@ -45,14 +45,3 @@
    ```
 
 3. Open the `index.html` file in your preferred browser to view the website locally.
-
-## Usage
-
-- Update the content in the HTML files to reflect your information.
-- Customize the styles in the CSS files to match your preferences.
-- If using React, make sure to update the components in the `src` directory.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-```
