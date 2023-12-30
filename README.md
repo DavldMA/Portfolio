@@ -35,13 +35,13 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/DavldMA/Portfolio.git
    ```
 
 2. Change into the project directory:
 
    ```bash
-   cd your-portfolio
+   cd Portfolio
    ```
 
 3. Open the `index.html` file in your preferred browser to view the website locally.
