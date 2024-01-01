@@ -21,7 +21,6 @@
 - CSS
 - Bootstrap
 - JavaScript
-- React (optional)
 
 ## Features
 
