@@ -1,3 +1,14 @@
+:root {
+    --main-color: hotpink;
+    --pane-padding: 5px 42px;
+}
+
+body {
+    background-color: aqua;
+}
+
+/* Loader */
+
 .loader {
     position: fixed;
     top: 0;
