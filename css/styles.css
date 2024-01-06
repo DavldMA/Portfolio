@@ -1,38 +1,33 @@
 :root {
     --main-color: hotpink;
-    --pane-padding: 5px 42px;
 }
 
 body {
     background-color: aqua;
 }
 
-/* 
+
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
 li a.active {
-  background-color: #04AA6D;
-  color: white;
+    background-color: var(--main-color);
+    color: white;
 }
 
 li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+    color: green;
 }
-font-variation-settings: "wght" 800,"wdth" 125; */
 
 /* Loader */
 
