@@ -12,6 +12,10 @@ body {
     padding: 0;
 }
 
+.navbar-item {
+    display: inline-block;
+}
+
 .navbar-item a {
     display: block;
     color: #000;
