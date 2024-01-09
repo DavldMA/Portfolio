@@ -10,10 +10,12 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: right;
 }
 /*inline*/
 .navbar-item {
     display: inline-block;
+    
 }
 
 .navbar-item a {
