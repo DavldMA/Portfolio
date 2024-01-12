@@ -1,9 +1,13 @@
 :root {
-    --main-color: hotpink;
+    --text-color: #050315;
+    --background-color: #EFEFEF;
+    --primary-color: #ec69ab;
+    --secondary-color: #FDDCFF;
+    --accent-color: #FF3BE8;
 }
 
 body {
-    background-color: aqua;
+    background-color: var(--background-color);
 }
 /* options of page layout: normal, 2 columns, normal with some twists, just make the nav bar on the side */
 .navbar {
@@ -17,31 +21,26 @@ body {
 }
 
 .navbar a {
-    color: white;
+    color: var(--text-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .navbar a.active {
-    background-color: var(--main-color);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
 
 .navbar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--background-color);
 }
 
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
 
 .navbar img {
     height: 40px; /* Adjust the height as needed */
 }
-
 
 /* Loader */
 
