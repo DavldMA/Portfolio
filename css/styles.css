@@ -53,7 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: grey;
+    background: black;
     transition: opacity 0.75s, visibility 0.75s;
 }
 
@@ -67,8 +67,8 @@ body {
     content: " ";
     width: 75px;
     height: 75px;
-    border: 15px solid white;
-    border-top-color: pink;
+    border: 15px solid var(--background-color);
+    border-top-color: var(--primary-color);
     border-radius: 50%;
     animation: loading 0.75s ease infinite;
 }
