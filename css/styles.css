@@ -59,7 +59,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black;
+    background: var(--text-color);
     transition: opacity 0.75s, visibility 0.75s;
 }
 
