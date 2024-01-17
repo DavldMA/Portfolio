@@ -1,7 +1,7 @@
 /* Base */
 
 :root {
-    --text-color: #050315;
+    --text-color: #050315;/*have to change colors or create a second theme color*/
     --background-color: #EFEFEF;
     --primary-color: #ec69ab;
     --secondary-color: #FDDCFF;
@@ -13,7 +13,7 @@ body {
 }
 
 
-/* options of page layout: normal, 2 columns, normal with some twists, just make the nav bar on the side */
+/* Options of page layout: normal, 2 columns, normal with some twists, just make the nav bar on the side */
 
 .navbar {
     overflow: hidden;
