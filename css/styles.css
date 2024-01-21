@@ -23,6 +23,7 @@ body {
 }
 
 .navbar {
+    background-color: var(--secondary-color);
     overflow: hidden;
     display: flex;
     justify-content: space-between;
