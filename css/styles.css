@@ -7,6 +7,11 @@
     --primary-color: #ec69ab;
     --secondary-color: #FDDCFF;
     --accent-color: #FF3BE8;
+    --darkmode-text-color: #050315;
+    --darkmode-background-color: #EFEFEF;
+    --darkmode-primary-color: #ec69ab;
+    --darkmode-secondary-color: #FDDCFF;
+    --darkmode-accent-color: #FF3BE8;
 }
 
 body {
