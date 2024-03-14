@@ -1,21 +1,104 @@
 /* Base */
 
 :root {
-    --text-color: #050315;
-    --background-color: #EFEFEF;
-    --primary-color: #ec69ab;
-    --secondary-color: #FDDCFF;
-    --accent-color: #FF3BE8;
-    --darkmode-text-color: #050315;
-    --darkmode-background-color: #EFEFEF;
-    --darkmode-primary-color: #ec69ab;
-    --darkmode-secondary-color: #FDDCFF;
-    --darkmode-accent-color: #FF3BE8;
+    --text-50: #e8eafc;
+    --text-100: #d2d6f9;
+    --text-200: #a5adf3;
+    --text-300: #7883ed;
+    --text-400: #4a5ae8;
+    --text-500: #1d31e2;
+    --text-600: #1727b5;
+    --text-700: #121d87;
+    --text-800: #0c145a;
+    --text-900: #060a2d;
+    --text-950: #030517;
+
+    --background-50: #eaeefb;
+    --background-100: #d4ddf7;
+    --background-200: #aabbee;
+    --background-300: #7f99e6;
+    --background-400: #5577dd;
+    --background-500: #2a55d5;
+    --background-600: #2244aa;
+    --background-700: #193380;
+    --background-800: #112255;
+    --background-900: #08112b;
+    --background-950: #040815;
+
+    --primary-50: #ebecf9;
+    --primary-100: #d8daf3;
+    --primary-200: #b1b5e7;
+    --primary-300: #8a8fdb;
+    --primary-400: #636acf;
+    --primary-500: #3c45c3;
+    --primary-600: #30379c;
+    --primary-700: #242975;
+    --primary-800: #181c4e;
+    --primary-900: #0c0e27;
+    --primary-950: #060714;
+
+    --secondary-50: #f0e8fc;
+    --secondary-100: #e1d2f9;
+    --secondary-200: #c3a5f3;
+    --secondary-300: #a578ed;
+    --secondary-400: #874ae8;
+    --secondary-500: #691de2;
+    --secondary-600: #5417b5;
+    --secondary-700: #3f1287;
+    --secondary-800: #2a0c5a;
+    --secondary-900: #15062d;
+    --secondary-950: #0a0317;
+
+    --accent-50: #f4eafa;
+    --accent-100: #e9d5f6;
+    --accent-200: #d3abed;
+    --accent-300: #bc82e3;
+    --accent-400: #a658da;
+    --accent-500: #902ed1;
+    --accent-600: #7325a7;
+    --accent-700: #561c7d;
+    --accent-800: #3a1254;
+    --accent-900: #1d092a;
+    --accent-950: #0e0515;
+
+    --linearPrimarySecondary: linear-gradient(#3a42bc, #b28bf0);
+    --linearPrimaryAccent: linear-gradient(#3a42bc, #cc9fea);
+    --linearSecondaryAccent: linear-gradient(#b28bf0, #cc9fea);
+    --radialPrimarySecondary: radial-gradient(#3a42bc, #b28bf0);
+    --radialPrimaryAccent: radial-gradient(#3a42bc, #cc9fea);
+    --radialSecondaryAccent: radial-gradient(#b28bf0, #cc9fea);
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--background);
     padding: 1rem;
+}
+
+body, * {
+    cursor: none; /* Apply cursor: none; to all elements */
+}
+
+.cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: black;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+}
+
+.cursor-dot, 
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
 }
 
 
@@ -27,27 +110,27 @@ body {
 }
 
 .navbar {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-100);
     overflow: hidden;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar a {
-    color: var(--text-color);
+    color: var(--text);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .navbar a.active {
-    background-color: var(--primary-color);
-    color: var(--background-color);
+    background-color: var(--primary);
+    color: var(--background);
 }
 
 .navbar a:hover:not(.active) {
-    background-color: var(--accent-color);
-    color: var(--background-color);
+    background-color: var(--accent);
+    color: var(--background);
 }
 
 
@@ -67,7 +150,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--text-color);
+    background: var(--text);
     transition: opacity 0.75s, visibility 0.75s;
 }
 
@@ -81,8 +164,8 @@ body {
     content: " ";
     width: 75px;
     height: 75px;
-    border: 15px solid var(--background-color);
-    border-top-color: var(--primary-color);
+    border: 15px solid var(--background);
+    border-top-color: var(--primary);
     border-radius: 50%;
     animation: loading 0.75s ease infinite;
 }
