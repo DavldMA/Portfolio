@@ -75,7 +75,7 @@ body {
 }
 
 body, * {
-    cursor: none; /* Apply cursor: none; to all elements */
+    cursor: none; 
 }
 
 .cursor-dot {
@@ -88,7 +88,13 @@ body, * {
     width: 30px;
     height: 30px;
     border: 2px solid black;
+    transition: background-color 0.3s ease;
 }
+
+.cursor-outline-hover {
+    background-color: red;
+}
+
 
 .cursor-dot, 
 .cursor-outline {
@@ -99,8 +105,8 @@ body, * {
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
+    
 }
-
 
 /* Options of page layout: normal, 2 columns, normal with some twists, just make the nav bar on the side */
 /* Navbar */

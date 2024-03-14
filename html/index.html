@@ -21,6 +21,30 @@
     <section id="about">a</section>
     <section id="work">w</section>
     <section id="contact">c</section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all links
+            var links = document.querySelectorAll('a');
+        
+            // Function to add the hover class to the cursor-outline
+            function addHoverClass() {
+                var cursorOutline = document.querySelector('.cursor-outline');
+                cursorOutline.classList.add('cursor-outline-hover');
+            }
+        
+            // Function to remove the hover class from the cursor-outline
+            function removeHoverClass() {
+                var cursorOutline = document.querySelector('.cursor-outline');
+                cursorOutline.classList.remove('cursor-outline-hover');
+            }
+        
+            // Add event listeners to all links
+            links.forEach(function(link) {
+                link.addEventListener('mouseover', addHoverClass);
+                link.addEventListener('mouseout', removeHoverClass);
+            });
+        });
+        </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
