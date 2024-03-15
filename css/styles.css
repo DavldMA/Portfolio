@@ -76,9 +76,16 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--background);
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
 }
 
 * {
@@ -94,20 +101,13 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 10rem;
-    text-align: center
-    /* font-style: italic; */
-    /* text-decoration: underline; */
+    text-align: center;
 }
 
 
 /* Options of page layout: normal, 2 columns, normal with some twists, just make the nav bar on the side */
 /* Navbar */
 
-@import 'https://fonts.googleapis.com/css?family=Open+Sans';
-
-body{ background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/ignasi_pattern_s.png);
-font-family: 'Open Sans', sans-serif;
-}
 
 .menu {
     position: fixed;
@@ -161,23 +161,8 @@ font-family: 'Open Sans', sans-serif;
 
 }
 
-body {
-    padding-top: 200px;
-    padding-bottom: 700px;
-}
-
 section {
-    &#index {
-        height: 600px;
-    }
-
-    &#about {
-        height: 900px;
-    }
-
-    &#contacts {
-        height: 400px;
-    }
+    height: 100vh;
 }
 
 

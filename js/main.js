@@ -25,7 +25,7 @@ function handleClick() {
 }
 
 function handleHoverEffect(add) {
-    return function() {
+    return function () {
         cursorOutline.classList.toggle('cursor-outline-hover', add);
     };
 }
@@ -53,23 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $(document).ready(function () {
     $(document).on("scroll", onScroll);
-    
+
     //smoothscroll
     $('.menu a').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
-      console.log('click');
-        
+        console.log('click');
+
         $('.menu a').each(function () {
             $(this).removeClass('active');
         })
         $(this).addClass('active');
-      
+
         var target = this.hash,
             menu = target;
         $target = $(target);
         $('html, body').stop().animate({
-            'scrollTop': $target.offset().top+2
+            'scrollTop': $target.offset().top + 2
         }, 500, 'swing', function () {
             window.location.hash = target;
             $(document).on("scroll", onScroll);
@@ -77,7 +77,7 @@ $(document).ready(function () {
     });
 });
 
-function onScroll(event){
+function onScroll(event) {
     var scrollPos = $(document).scrollTop();
     $('.menu a').each(function () {
         var currLink = $(this);
@@ -86,7 +86,7 @@ function onScroll(event){
             $('.menu a').removeClass("active");
             currLink.addClass("active");
         }
-        else{
+        else {
             currLink.removeClass("active");
         }
     });
