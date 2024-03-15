@@ -51,43 +51,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-$(document).ready(function () {
-    $(document).on("scroll", onScroll);
 
-    //smoothscroll
-    $('.menu a').on('click', function (e) {
-        e.preventDefault();
-        $(document).off("scroll");
-        console.log('click');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.menu .dot');
+    const sections = document.querySelectorAll('section');
 
-        $('.menu a').each(function () {
-            $(this).removeClass('active');
-        })
-        $(this).addClass('active');
+    function updateActiveClass() {
+        menuItems.forEach(item => item.classList.remove('active'));
 
-        var target = this.hash,
-            menu = target;
-        $target = $(target);
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top + 2
-        }, 500, 'swing', function () {
-            window.location.hash = target;
-            $(document).on("scroll", onScroll);
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                if(section.id == "header"){
+                    //hide all dots
+                }
+                const menuItem = document.querySelector(`.menu .dot[data-section="${section.id}"]`);
+                if (menuItem) menuItem.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveClass);
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            if(this.getAttribute('href') == "#header") {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            else if (targetSection) {
+
+                const scrollToPosition = targetSection.offsetTop;
+                window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+                this.classList.add('active');
+            }
         });
     });
-});
 
-function onScroll(event) {
-    var scrollPos = $(document).scrollTop();
-    $('.menu a').each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $('.menu a').removeClass("active");
-            currLink.addClass("active");
-        }
-        else {
-            currLink.removeClass("active");
-        }
-    });
-}
+    updateActiveClass();
+});

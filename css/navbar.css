@@ -1,0 +1,54 @@
+/* Navbar */
+
+.menu {
+    position: fixed;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
+
+    .dot {
+        display: block;
+        border: 3px solid rgb(0, 0, 0);
+        margin-bottom: 20px;
+        border-radius: 10px;
+        width: 10px;
+        height: 10px;
+        color: #000;
+        text-decoration: none;
+
+        &,
+        &:hover,
+        span {
+            transition: all 200ms ease;
+        }
+
+
+        &:hover,
+        &.active {
+            background: black;
+            border-color: white;
+            box-shadow: 0 0 0 3px black;
+        
+
+            span {
+                opacity: 1;
+
+                &.forty {
+                    transform: translate(-45px, -3px);
+                }
+
+                &.sixty {
+                    transform: translate(-60px, -3px);
+                }
+            }
+        }
+
+        span {
+            font-size: 12px;
+            display: block;
+            transform: translate(0, -3px);
+            opacity: 0;
+        }
+    }
+
+}
