@@ -28,6 +28,14 @@ window.addEventListener("mousemove", function (e) {
     }, { duration: 500, fill: "forwards" });
 })
 
+document.addEventListener('click', () => {
+    cursorOutline.classList.add("expand");
+
+    setTimeout(() => {
+        cursorOutline.classList.remove("expand");
+    }, 500)
+})
+
 document.addEventListener('DOMContentLoaded', function() {
     
 

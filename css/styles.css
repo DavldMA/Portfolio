@@ -78,6 +78,19 @@ body {
     cursor: none; 
 }
 
+
+/* Mouse */
+
+::-moz-selection { 
+    color: red;
+    background: yellow;
+}
+
+::selection {
+    color: red;
+    background: yellow;
+}
+
 .cursor-dot {
     width: 5px;
     height: 5px;
@@ -85,29 +98,45 @@ body {
 }
 
 .cursor-outline {
-    width: 30px;
-    height: 30px;
-    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
     transition: width 0.3s ease, height 0.3s ease;
+    animation: cursor-anim .5s infinite alternate;
 }
 
 .cursor-outline-hover {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
-
 .cursor-dot, 
-.cursor-outline {
+.cursor-outline, .cursor-outline::after {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
-    
 }
+
+.cursor-outline::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 8px solid gray;
+    opacity: .5;
+    animation: cursor-inline .5s infinite alternate;
+}
+
+
+
+.expand {
+    animation: expand-click .5s forwards;
+    border: 1px solid rgb(251, 255, 0);
+}
+
 
 /* Options of page layout: normal, 2 columns, normal with some twists, just make the nav bar on the side */
 /* Navbar */
@@ -177,9 +206,43 @@ body {
     animation: loading 0.75s ease infinite;
 }
 
+
+/* Animations */
+
 @keyframes loading {
     from { transform: rotate(0turn) }
     to { transform: rotate(1turn) }
+}
+
+@keyframes cursor-anim {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(.7);
+    }
+}
+
+@keyframes cursor-inline {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(.4);
+    }
+}
+
+@keyframes expand-click {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(3);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
 }
 
 
