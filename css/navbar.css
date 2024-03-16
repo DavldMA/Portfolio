@@ -44,10 +44,15 @@
         }
 
         span {
-            font-size: 12px;
+            font-size: 13px;
             display: block;
             transform: translate(0, -3px);
             opacity: 0;
+        }
+
+        .forty, .sixty{
+            font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 400;
         }
     }
 
