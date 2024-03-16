@@ -52,9 +52,11 @@ section {
     max-width: calc(100% - 4rem); 
     margin-left: auto;
     margin-right: auto;
+    
 }
 
-/* transform dont work with the navbar, I have to try something else */
+/* TODO transform dont work with the navbar, I have to try something else */
+/* TODO maybe try to put hidden before the menu class or something */
 .hidden {
     opacity: 0;
     filter: blur(5px);

@@ -58,22 +58,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateActiveClass() {
         menuItems.forEach(item => item.classList.remove('active'));
-
+    
         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                if(section.id == "header"){
-                    //hide all dots
+    
+        // Check if the scroll position is at the very top of the page
+        if (scrollPosition === 0) {
+            // Hide all dots if at the very top of the page
+            menuItems.forEach(item => item.style.display = 'none');
+        } else {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+    
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    if(section.id == "header"){
+                        // Hide all dots if the header is in view
+                        menuItems.forEach(item => item.style.display = 'none');
+                    } else {
+                        // Show all dots if the header is not in view
+                        menuItems.forEach(item => item.style.display = '');
+                    }
+                    const menuItem = document.querySelector(`.menu .dot[data-section="${section.id}"]`);
+                    if (menuItem) menuItem.classList.add('active');
                 }
-                const menuItem = document.querySelector(`.menu .dot[data-section="${section.id}"]`);
-                if (menuItem) menuItem.classList.add('active');
-            }
-        });
+            });
+        }
     }
+    
+
+    // Set initial visibility based on scroll position
+    updateActiveClass();
 
     window.addEventListener('scroll', updateActiveClass);
 
@@ -82,18 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); 
             const targetSection = document.querySelector(this.getAttribute('href'));
             if(this.getAttribute('href') == "#header") {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
             else if (targetSection) {
-
                 const scrollToPosition = targetSection.offsetTop;
                 window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
                 this.classList.add('active');
             }
         });
     });
-
-    updateActiveClass();
 });
 
 const observer = new IntersectionObserver((entries) => {
@@ -108,6 +119,7 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
 
 // var hasTouchScreen = false;
 
