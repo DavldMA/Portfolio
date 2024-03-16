@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveClass);
 
-    menuItems.forEach(item => {
+    dots.forEach(item => {
         item.addEventListener('click', function(event) {
             event.preventDefault(); 
             const targetSection = document.querySelector(this.getAttribute('href'));
