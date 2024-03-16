@@ -53,16 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const menuItems = document.querySelectorAll('.menu .dot');
+    const menuItems = document.querySelectorAll('.menu');
+    const dots = document.querySelectorAll('.menu .dot');
     const sections = document.querySelectorAll('section');
 
     function updateActiveClass() {
-        menuItems.forEach(item => item.classList.remove('active'));
-    
+        dots.forEach(item => item.classList.remove('active'));
         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
         if (scrollPosition === 0) {
-            menuItems.forEach(item => item.style.display = 'none');
+            menuItems.forEach(menuItem => {
+                menuItem.animate({
+                    opacity: "0",
+                    right: "0px"
+                }, { duration: 500, fill: "forwards" });
+            });
         } else {
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -70,10 +75,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     if(section.id == "header"){
-                        //TODO Add animation here by removing and adding a class
-                        menuItems.forEach(item => item.style.display = 'none');
+                        menuItems.forEach(menuItem => {
+                            menuItem.animate({
+                                opacity: "0",
+                                right: "0px"
+                            }, { duration: 500, fill: "forwards" });
+                        });
                     } else {
-                        menuItems.forEach(item => item.style.display = '');
+                        menuItems.forEach(menuItem => {
+                            menuItem.animate({
+                                opacity: "1",
+                                right: "100px"
+                            }, { duration: 500, fill: "forwards" });
+                        });
                     }
                     const menuItem = document.querySelector(`.menu .dot[data-section="${section.id}"]`);
                     if (menuItem) menuItem.classList.add('active');
@@ -107,8 +121,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
         }
     })
 })

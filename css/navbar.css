@@ -7,6 +7,7 @@
     transform: translateY(-50%);
     z-index: 5;
 
+
     .dot {
         display: block;
         border: 3px solid rgb(0, 0, 0);
@@ -16,6 +17,7 @@
         height: 10px;
         color: #000;
         text-decoration: none;
+        transition: all 3s;
 
         &,
         &:hover,
