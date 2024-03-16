@@ -60,10 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         menuItems.forEach(item => item.classList.remove('active'));
     
         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    
-        // Check if the scroll position is at the very top of the page
+
         if (scrollPosition === 0) {
-            // Hide all dots if at the very top of the page
             menuItems.forEach(item => item.style.display = 'none');
         } else {
             sections.forEach(section => {
@@ -72,10 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     if(section.id == "header"){
-                        // Hide all dots if the header is in view
+                        //TODO Add animation here by removing and adding a class
                         menuItems.forEach(item => item.style.display = 'none');
                     } else {
-                        // Show all dots if the header is not in view
                         menuItems.forEach(item => item.style.display = '');
                     }
                     const menuItem = document.querySelector(`.menu .dot[data-section="${section.id}"]`);
@@ -86,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 
-    // Set initial visibility based on scroll position
     updateActiveClass();
 
     window.addEventListener('scroll', updateActiveClass);
