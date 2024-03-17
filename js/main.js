@@ -6,9 +6,7 @@ const menuItems = document.querySelectorAll('.menu');
 const dots = document.querySelectorAll('.menu .dot');
 const sections = document.querySelectorAll('section');
 
-menuItems.forEach(menuItem => {
-    menuItem.style.display = "none";
-});
+
 
 
 function handleCursorMove(e) {
@@ -61,11 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    menuItems.forEach(menuItem => {
-        menuItem.style.display = "";
-    });
+
 
     function updateActiveClass() {
+
         dots.forEach(item => item.classList.remove('active'));
         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
@@ -77,6 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, { duration: 500, fill: "forwards" });
             });
         } else {
+            menuItems.forEach(menuItem => {
+                menuItem.style.display = "";
+            });
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;

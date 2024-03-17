@@ -60,7 +60,7 @@ section {
     font-optical-sizing: auto;
     font-weight: 500;
     opacity: 0;
-    animation: popUp 1s ease-out forwards 0.6s;
+    animation: popUp 0.5s ease-out forwards 0.6s;
 }
 
 @keyframes popUp {
@@ -80,6 +80,7 @@ section {
     border-radius: 25px;
     background-color: #000;
     margin: 10px auto; 
+    z-index: 100000;
     animation: lineAppear 0.6s ease-in forwards;
 }
 
@@ -99,6 +100,19 @@ section {
     font-size: 5vw;
     margin-bottom: 0;
     margin-top: 0;
+    opacity: 0;
+    animation: popDown 0.5s ease-out forwards 1.2s;
+}
+
+@keyframes popDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .content-header:last-child {
