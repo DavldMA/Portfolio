@@ -1,5 +1,5 @@
 /* Base */
-
+/* TODO responsive */
 :root {
     --background-color: #eee
 }
@@ -16,6 +16,7 @@ html {
     overflow-y: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 html::-webkit-scrollbar {
@@ -30,7 +31,6 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 3rem;
-    padding-bottom: 2rem;
 }
 
 * {
@@ -43,24 +43,45 @@ section {
 }
 
 .header {
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 10rem;
-    text-align: center;
-    max-width: calc(100% - 4rem); 
+
+    
+    
+    /*  max-width: calc(100% - 4rem);  */
     margin-left: auto;
     margin-right: auto;
 
 }
 
-/* TODO transform dont work with the navbar, I have to try something else, just need to make animation now xd */
-.hidden {
+.title-header {
+    font-size: 10rem;
+    margin-bottom: 0;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+.content-header {
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+}
+
+
+.hiddenLeft {
     opacity: 0;
     filter: blur(5px);
     transform: translate(-100%);
-    transition: all 3s;
+    transition: all .9s;
+}
+
+.hiddenDown {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all .9s;
 }
 
 .show {
@@ -88,7 +109,7 @@ section {
     align-items: center;
     justify-content: center;
     background: var(--background-color);
-    transition: opacity 0.75s, visibility 0.75s;
+    transition: opacity 0.75s, visibility 1s;
 }
 
 .loader--hidden {

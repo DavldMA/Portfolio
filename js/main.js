@@ -2,6 +2,13 @@
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");
 const links = document.querySelectorAll('a');
+const menuItems = document.querySelectorAll('.menu');
+const dots = document.querySelectorAll('.menu .dot');
+const sections = document.querySelectorAll('section');
+
+menuItems.forEach(menuItem => {
+    menuItem.style.display = "none";
+});
 
 
 function handleCursorMove(e) {
@@ -53,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const menuItems = document.querySelectorAll('.menu');
-    const dots = document.querySelectorAll('.menu .dot');
-    const sections = document.querySelectorAll('section');
+    menuItems.forEach(menuItem => {
+        menuItem.style.display = "";
+    });
 
     function updateActiveClass() {
         dots.forEach(item => item.classList.remove('active'));
@@ -74,21 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const sectionHeight = section.offsetHeight;
     
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    if(section.id == "header"){
-                        menuItems.forEach(menuItem => {
-                            menuItem.animate({
-                                opacity: "0",
-                                right: "0px"
-                            }, { duration: 500, fill: "forwards" });
-                        });
-                    } else {
-                        menuItems.forEach(menuItem => {
-                            menuItem.animate({
-                                opacity: "1",
-                                right: "100px"
-                            }, { duration: 500, fill: "forwards" });
-                        });
-                    }
+                    menuItems.forEach(menuItem => {
+                        menuItem.animate({
+                            opacity: "1",
+                            right: "100px"
+                        }, { duration: 500, fill: "forwards" });
+                    });
                     const menuItem = document.querySelector(`.menu .dot[data-section="${section.id}"]`);
                     if (menuItem) menuItem.classList.add('active');
                 }
@@ -125,32 +123,20 @@ const observer = new IntersectionObserver((entries) => {
     })
 })
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+const hiddenLeftElements = document.querySelectorAll('.hiddenLeft');
+const hiddenDownElements = document.querySelectorAll('.hiddenDown');
+hiddenLeftElements.forEach((el) => observer.observe(el));
+hiddenDownElements.forEach((el) => observer.observe(el));
 
 
 // var hasTouchScreen = false;
 
-// if ("maxTouchPoints" in navigator) {
-//     hasTouchScreen = navigator.maxTouchPoints > 0;
-// } else if ("msMaxTouchPoints" in navigator) {
-//     hasTouchScreen = navigator.msMaxTouchPoints > 0;
-// } else {
-//     var mQ = window.matchMedia && matchMedia("(pointer:coarse)");
-//     if (mQ && mQ.media === "(pointer:coarse)") {
-//         hasTouchScreen = !!mQ.matches;
-//     } else if ('orientation' in window) {
-//         hasTouchScreen = true; // deprecated, but good fallback
-//     } else {
-//         // Only as a last resort, fall back to user agent sniffing
-//         var UA = navigator.userAgent;
+// var UA = navigator.userAgent;
 //         hasTouchScreen = (
 //             /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
 //             /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA)
-//         );
-//     }
-// }
+//         ); 
 
-// if (hasTouchScreen)
-//     // Do something here. 
+// if (hasTouchScreen) {
+//     console.log("ok")
 // }
