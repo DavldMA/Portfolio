@@ -60,3 +60,15 @@
     }
 
 }
+
+@media (max-width: 1080px) {
+    .menu {
+        display: none;
+    }
+    .stickyTitle {
+        position: sticky;
+        top: 0; 
+        background-color: var(--background-color);;
+        z-index: 1000; 
+    }
+}
