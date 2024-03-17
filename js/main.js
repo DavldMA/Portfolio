@@ -23,6 +23,7 @@ function handleCursorMove(e) {
     }, { duration: 500, fill: "forwards" });
 }
 
+
 function handleClick() {
     cursorOutline.classList.add("expand");
 

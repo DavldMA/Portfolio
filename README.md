@@ -19,7 +19,6 @@
 
 - HTML
 - CSS
-- Bootstrap
 - JavaScript
 
 ## Features
