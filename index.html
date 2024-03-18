@@ -4,68 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../css/mouse.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../css/animations.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../css/navbar.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/mouse.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/animations.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css" media="screen" />
+
     <title>Portfolio</title>
 </head>
 
 <body>
-    <div class="loader"></div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-    <div class="menu" style="display: none;">
-        <a class="dot" href="#header" data-section="header">
-            <span class="forty">Home</span>
-        </a>
-        <a class="dot" href="#about" data-section="about">
-            <span class="forty">About</span>
-        </a>
-        <a class="dot" href="#work" data-section="work">
-            <span class="forty">Work</span>
-        </a>
-        <a class="dot" href="#contacts" data-section="contacts">
-            <span class="sixty">Contacts</span>
-        </a>
-    </div>
-
-    <section id="header">
-        <div class="header">
-            <h1 class="title-header">David Anastácio</h1>
-            <hr class="thick-line">
-            <p class="content-header">BACK-END DEVELOPER</p>
-        </div>
-        <span class="scroll-btn hiddenDown">
-            <a href="#about">
-                <span class="mouse">
-                    <span>
-                    </span>
-                </span>
+    <div class="mainContent">
+        <div class="loader"></div>
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+        <div class="menu" style="display: none;">
+            <a class="dot" href="#header" data-section="header">
+                <span class="forty">Home</span>
             </a>
-            <p style="margin-left: -55px;">scroll me</p>
-        </span>
-    </section>
+            <a class="dot" href="#about" data-section="about">
+                <span class="forty">About</span>
+            </a>
+            <a class="dot" href="#work" data-section="work">
+                <span class="forty">Skills</span>
+            </a>
+            <a class="dot" href="#contacts" data-section="contacts">
+                <span class="sixty">Projects</span>
+            </a>
+        </div>
 
-    <section id="about">
-        <h1 class="hiddenLeft stickyTitle">About Me</h1>
-        <p>Meet Jack, the coding maestro with an insatiable appetite for all things backend! At a mere 19 years young, Jack is already a seasoned software engineering student, poised to conquer the digital realm one line of code at a time.
+        <section id="header">
+            <div class="header">
+                <h1 class="title-header">David Anastácio</h1>
+                <hr class="thick-line">
+                <p class="content-header">BACK-END DEVELOPER</p>
+                <div class="socials">
+                    <a class="github" href="https://github.com/DavldMA" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"><path fill="black" d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path></svg></a>
+                    <a class="twitter" href="https://twitter.com/lPandoraBox" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 72 72"><path fill="black" d="M67.812 16.141a26.246 26.246 0 0 1-7.519 2.06 13.134 13.134 0 0 0 5.756-7.244 26.127 26.127 0 0 1-8.313 3.176A13.075 13.075 0 0 0 48.182 10c-7.229 0-13.092 5.861-13.092 13.093 0 1.026.118 2.021.338 2.981-10.885-.548-20.528-5.757-26.987-13.679a13.048 13.048 0 0 0-1.771 6.581c0 4.542 2.312 8.551 5.824 10.898a13.048 13.048 0 0 1-5.93-1.638c-.002.055-.002.11-.002.162 0 6.345 4.513 11.638 10.504 12.84a13.177 13.177 0 0 1-3.449.457c-.846 0-1.667-.078-2.465-.231 1.667 5.2 6.499 8.986 12.23 9.09a26.276 26.276 0 0 1-16.26 5.606A26.21 26.21 0 0 1 4 55.976a37.036 37.036 0 0 0 20.067 5.882c24.083 0 37.251-19.949 37.251-37.249 0-.566-.014-1.134-.039-1.694a26.597 26.597 0 0 0 6.533-6.774z"></path></svg></a>
+                    <a class="email" href="https://github.com/DavldMA" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512"><path fill="black" d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"></path></svg></a>
+                </div>
 
-            From the tender age of 15, Jack's fingers have been dancing across keyboards, crafting elegant solutions and dreaming up innovative algorithms. With a passion for problem-solving that rivals the most seasoned developers, he's not just fluent in programming languages, he's practically multilingual!
-            
-            But Jack's talents don't stop at academia. When he's not buried in lines of code or pouring over textbooks, you can find him in his own digital playground, crafting captivating video games that blur the lines between reality and imagination. His creativity knows no bounds as he conjures up worlds filled with adventure, challenge, and endless entertainment.
-            
-            Whether he's debugging a complex backend issue or fine-tuning the mechanics of his latest gaming masterpiece, Jack's love for coding shines through in everything he does. With his dedication, skill, and boundless enthusiasm, the future of technology is in very capable hands indeed. Watch out, world—Jack's just getting started!</p>
-    </section>
-    <section id="work">
-        <h1 class="stickyTitle">&lt;My Work /></h1>
-    </section>
-    <section id="contacts">
-        <h1 class="stickyTitle">Contact Me</h1>
-    </section>
+            </div>
+            <span class="scroll-btn hiddenDown">
+                <a href="#about">
+                    <span class="mouse">
+                        <span>
+                        </span>
+                    </span>
+                </a>
+                <p style="margin-left: -55px;">scroll me</p>
+            </span>
+        </section>
+
+        <section id="about">
+            <br><br><br><br><br><br>
+            <div>
+                <h1 class="hiddenLeft stickyTitle">About Me</h1>
+                <p class="hiddenLeft">Meet David, the coding maestro with an insatiable appetite for all things related to coding! At a mere 19 years young, David is already a seasoned software engineering student, poised to conquer the digital realm one line of code at a time. From the tender age of 15, David's fingers have been dancing across keyboards, crafting elegant solutions and dreaming up innovative algorithms. With a passion for problem-solving.</p>
+                <p class="hiddenLeft">But David's talents don't stop at academia. When he's not buried in lines of code or pouring over textbooks, you can find him in his own digital playground, crafting captivating video games that blur the lines between reality and imagination. His creativity knows no bounds as he conjures up worlds filled with adventure, challenge, and endless entertainment. Whether he's debugging a complex backend issue or fine-tuning the mechanics of his latest gaming masterpiece, David's love for coding shines through in everything he does.</p>
+            </div>
+        </section>
+        <section id="work">
+            <br><br><br><br><br><br>
+            <div>
+                <h1 class="hiddenLeft stickyTitle">&lt;My Skills /></h1>
+                <p class="hiddenLeft">Meet David, the coding maestro with an insatiable appetite for all things related to coding! At a mere 19 years young, David is already a seasoned software engineering student, poised to conquer the digital realm one line of code at a time. From the tender age of 15, David's fingers have been dancing across keyboards, crafting elegant solutions and dreaming up innovative algorithms. With a passion for problem-solving.</p>
+                <p class="hiddenLeft">But David's talents don't stop at academia. When he's not buried in lines of code or pouring over textbooks, you can find him in his own digital playground, crafting captivating video games that blur the lines between reality and imagination. His creativity knows no bounds as he conjures up worlds filled with adventure, challenge, and endless entertainment. Whether he's debugging a complex backend issue or fine-tuning the mechanics of his latest gaming masterpiece, David's love for coding shines through in everything he does.</p>
+            </div>
+        </section>
+        <section id="contacts">
+            <br><br><br><br><br><br>
+            <div>
+                <h1 class="hiddenLeft stickyTitle">Projects</h1>
+                <p class="hiddenLeft">Meet David, the coding maestro with an insatiable appetite for all things related to coding! At a mere 19 years young, David is already a seasoned software engineering student, poised to conquer the digital realm one line of code at a time. From the tender age of 15, David's fingers have been dancing across keyboards, crafting elegant solutions and dreaming up innovative algorithms. With a passion for problem-solving.</p>
+                <p class="hiddenLeft">But David's talents don't stop at academia. When he's not buried in lines of code or pouring over textbooks, you can find him in his own digital playground, crafting captivating video games that blur the lines between reality and imagination. His creativity knows no bounds as he conjures up worlds filled with adventure, challenge, and endless entertainment. Whether he's debugging a complex backend issue or fine-tuning the mechanics of his latest gaming masterpiece, David's love for coding shines through in everything he does.</p>
+                
+            </div>
+
+        </section>
+    </div>
+    <!-- <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h6>About</h6>
+                    <p class="text-justify">This was a website built in order to showcase my skills overall with a fun and interactive experience, so I hope that it was a good experience and you enjoyed travelling on my personal website! Check my social media under there</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by 
+                    <a href="https://github.com/DavldMA">David Anastácio</a>.
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="github" href="https://github.com/DavldMA"><i class="fa fa-github"></i></a></li>
+                        <li><a class="twitter" href="https://twitter.com/lPandoraBox"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="linkedin" href="https://www.linkedin.com/in/david-miguel-0a5422248/"><i class="fa fa-linkedin"></i></a></li>   
+                        <li><a class="gmail" href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer> -->
     <script src="../js/main.js"></script>
 </body>
 

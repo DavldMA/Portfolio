@@ -1,7 +1,12 @@
 /* Base */
-/* TODO responsive */
 :root {
-    --background-color: #eee
+    --background-color: #eee;
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1;
+}
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
 }
 
 .caveat-font {
@@ -11,7 +16,9 @@
     font-style: normal;
 }
 
-html {
+html, body {
+    margin: 0;
+    padding: 0;
     background-color: var(--background-color);
     overflow-y: scroll;
     -ms-overflow-style: none; 
@@ -27,8 +34,8 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    /* TODO MAKE THE NAVBAR DISAPPEAR AND MAKE THE TOP THING STICKY TO SHOW THE CURRENT TOPIC */
+.mainContent {
+    
     padding-left: 4vw;
     padding-right: 14vw;
     padding-top: 3rem;
@@ -47,7 +54,7 @@ section {
 
     /*  max-width: calc(100% - 4rem);  */
     width: 70vw;
-    margin-left: 10vw;
+    margin-left: 10.3vw;
     margin-right: auto;
     text-align: center;
 }
@@ -95,7 +102,7 @@ section {
 
 .content-header {
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
     font-size: 5vw;
     margin-bottom: 0;
@@ -119,6 +126,13 @@ section {
     margin-bottom: 20vh;
 }
 
+section p{
+    transition: all 1.5s !important;
+}
+
+section p:last-child{
+    transition: all 1.7s !important;
+}
 
 .hiddenLeft {
     opacity: 0;
@@ -145,6 +159,40 @@ section {
         transition: none;
     }
 }
+
+.socials {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    font-size: 0; 
+    list-style: none; 
+    padding-top: 2rem;
+    margin: 0 auto; 
+    max-width: 100%;
+    opacity: 0;
+    animation: popDown 0.5s ease-out forwards 1.7s;
+}
+
+.socials > a {
+    display: inline-block; 
+    width: 60px; 
+    opacity: 1;
+    transform: scale(var(--scale, .8));
+    transition: all .3s cubic-bezier(0.38,-0.12, 0.24, 1.91); 
+    --fill-color: black;
+}
+
+
+.socials > a:hover {
+    --scale: 1; 
+    --fill-color: red;
+}
+
+.socials > a path {
+    fill: var(--fill-color);
+    transition: all .3s 
+}
+
 
 
 /* Loader */

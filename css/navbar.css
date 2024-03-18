@@ -61,14 +61,21 @@
 
 }
 
+.stickyTitle {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
 @media (max-width: 1080px) {
     .menu {
         display: none;
     }
     .stickyTitle {
-        position: sticky;
+        position: sticky !important;
         top: 0; 
-        background-color: var(--background-color);;
+        background-color: var(--background-color);
         z-index: 1000; 
     }
 }
+

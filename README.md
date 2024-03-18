@@ -1,7 +1,5 @@
 # Portfolio Website
 
-![Project Image](url_to_project_image.png)
-
 > A personal portfolio website showcasing my skills, projects, and achievements.
 
 ## Table of Contents
