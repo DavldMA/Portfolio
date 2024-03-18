@@ -47,8 +47,10 @@ html {
 
 
 section {
-    height: 100vh;
+    min-height: 100vh;
 }
+
+
 
 .header {
 
@@ -58,6 +60,74 @@ section {
     margin-right: auto;
     text-align: center;
 }
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Adds space between the cards */
+    width: 100%;
+    max-width: 900px; /* Adjusts the maximum width of the card wrapper */
+    padding: 20px; /* Adds padding around the card wrapper */
+}
+
+.project-card {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Added to make the link a flex container */
+    width: 100%; /* Ensures the link takes the full width of the card */
+}
+
+.project-image {
+    width: 30%; /* Adjusted to take half the width of the card */
+    height: 160px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding-left: 15px;
+    width: 70%; /* Adjusted to take the other half of the card's width */
+}
+
+.project-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.project-description {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.tag {
+    background-color: #007bff4d;
+    color: rgb(2, 27, 255);
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 12px;
+}
+
 
 .title-header {
     font-size: 12vw;
@@ -88,7 +158,17 @@ section {
     background-color: #000;
     margin: 10px auto; 
     z-index: 100000;
-    animation: lineAppear 0.6s ease-in forwards;
+    animation: lineAppear 1s ease-in forwards;
+}
+
+.line {
+    border: none;
+    height: 1px;
+    border-radius: 25px;
+    background-color: #000;
+    margin-left: 0 ;
+    z-index: 100000;
+    animation: lineAppear 1s ease-in forwards;
 }
 
 @keyframes lineAppear {
@@ -127,6 +207,8 @@ section {
 }
 
 section p{
+    font-size: 20px;
+    font-weight: 400;
     transition: all 1.5s !important;
 }
 
