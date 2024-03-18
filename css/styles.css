@@ -65,40 +65,45 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adds space between the cards */
-    width: 100%;
-    max-width: 900px; /* Adjusts the maximum width of the card wrapper */
-    padding: 20px; /* Adds padding around the card wrapper */
+    gap: 20px;
+    width: 99%;
+    padding: 20px; 
 }
 
 .project-card {
     display: flex;
+    flex-direction: row; /* Default direction for larger screens */
     width: 100%;
+    padding: 1rem;
     overflow: hidden;
     margin-bottom: 1rem;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    background-color: antiquewhite;
 }
 
 .card-link {
     text-decoration: none;
     color: inherit;
-    display: flex; /* Added to make the link a flex container */
-    width: 100%; /* Ensures the link takes the full width of the card */
+    display: flex;
+    width: 100%;
 }
 
 .project-image {
-    width: 30%; /* Adjusted to take half the width of the card */
-    height: 160px;
+    width: 230px;
+    height: 130px;
+    border-radius: 5px;
     object-fit: cover;
+    order: 1; /* Ensure the image is the second item in the flex container */
 }
 
 .project-info {
     padding-left: 15px;
-    width: 70%; /* Adjusted to take the other half of the card's width */
+    width: 70%;
+    order: 2; /* Ensure the content is the first item in the flex container */
 }
 
 .project-title {
@@ -109,7 +114,7 @@ section {
 
 .project-description {
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
 }
 
@@ -127,6 +132,7 @@ section {
     border-radius: 25px;
     font-size: 12px;
 }
+
 
 
 .title-header {

@@ -77,5 +77,26 @@
         background-color: var(--background-color);
         z-index: 1000; 
     }
+
+    .card-link {
+        display: unset;
+    }
+
+    .project-card {
+        flex-direction: column; 
+    }
+
+    .project-image {
+        margin-bottom: 1rem;
+        width: 100%; 
+        height: auto; 
+        order: 2; 
+    }
+
+    .project-info {
+        width: 100%; 
+        padding-left: 0; 
+        order: 1; 
+    }
 }
 
