@@ -3,7 +3,7 @@
     --background-color: #eee;
     --contrast-color: rgba(192, 186, 99, 0.199);
     --contrast-color-faded: rgba(192, 186, 99, 0.452);
-    --high-contrast: rgb(255, 251, 0);
+    --high-contrast: rgba(226, 207, 37, 0.712);
     --highlight-color: rgb(0, 0, 0);
     --text-color: black;
     --faded-text-color: rgb(102, 102, 102);
@@ -62,9 +62,19 @@ section p{
     transition: all 1.5s !important;
 }
 
-section p:last-child{
+.last{
     transition: all 1.7s !important;
 }
+
+.colored {
+    color: var(--contrast-color-faded);
+}
+
+.colored2 {
+    color: var(--high-contrast);
+}
+
+
 
 .header {
     width: 70vw;
@@ -93,9 +103,9 @@ section p:last-child{
     background-color: var(--text-color);
     margin: 10px auto; 
     z-index: 100000;
-    animation: lineAppear 1s ease-in forwards;
-    -webkit-animation: lineAppear 1s ease-in forwards;
-    -moz-animation: lineAppear 1s ease-in forwards;
+    animation: lineAppear 2s ease-in forwards;
+    -webkit-animation: lineAppear 2s ease-in forwards;
+    -moz-animation: lineAppear 2s ease-in forwards;
 }
 
 .line {
@@ -105,9 +115,9 @@ section p:last-child{
     background-color: var(--text-color);
     margin-left: 0 ;
     z-index: 100000;
-    animation: lineAppear 1s ease-in forwards;
-    -webkit-animation: lineAppear 1s ease-in forwards;
-    -moz-animation: lineAppear 1s ease-in forwards;
+    animation: lineAppear 2s ease-in forwards;
+    -webkit-animation: lineAppear 2s ease-in forwards;
+    -moz-animation: lineAppear 2s ease-in forwards;
 }
 
 .content-header {
@@ -135,6 +145,12 @@ section p:last-child{
     transition: all .9s;
 }
 
+.hiddenRight {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(100%);
+}
+
 .hiddenDown {
     opacity: 0;
     filter: blur(5px);
@@ -143,15 +159,40 @@ section p:last-child{
 }
 
 .show {
-    opacity: 1;
+    opacity: 1 !important;
     filter: blur(0);
     transform: translate(0);
 }
+
+.fade-animation {
+    -webkit-animation: fadeOutIn 1s ease-in-out;
+    -moz-animation: fadeOutIn 1s ease-in-out;
+    animation: fadeOutIn 1s ease-in-out;
+}
+
 
 @media(prefers-reduced-motion) {
     .hidden {
         transition: none;
     }
+}
+
+@keyframes fadeOutIn {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOutIn {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeOutIn {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes lineAppear {

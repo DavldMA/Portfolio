@@ -1,23 +1,36 @@
 .external-link {
     position: relative;
     overflow: visible;
-    padding-right: 1.5em;
-    color: var(--contrast-color);
+    padding-right: 1em;
+    color: var(--faded-text-color);
+    opacity: 0;
+    text-decoration: none;
+    transition: color .5s, transform 1.5s ease-out, filter 1.5s, opacity 1.5s;
+}
+
+.external-link:hover {
+    color: var(--contrast-color-faded);
+
 }
 
 .external-link.big {
-    padding-left: 20px;
-    font-size: 2em;
+
+
+    position: absolute;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
 }
 
 .external-link .link-icon {
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 20px;
+    height: 20px;
     overflow: visible;
 }
 

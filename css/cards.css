@@ -15,7 +15,19 @@
     overflow: hidden;
     margin-bottom: 1rem;
     border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s, transform var(--transform-time) ease-out, filter 1.5s, opacity 1.5s;
+}
+
+.project-card:nth-child(1) {
+    --transform-time: 1.5s !important;
+}
+
+.project-card:nth-child(3) {
+    --transform-time: 1.7s !important;
+}
+
+.project-card:nth-child(5) {
+    --transform-time: 1.9s !important;
 }
 
 .project-card:hover {

@@ -126,6 +126,9 @@ const hiddenDownElements = selectElements('.hiddenDown');
 hiddenLeftElements.forEach((el) => observer.observe(el));
 hiddenDownElements.forEach((el) => observer.observe(el));
 
+const hiddenRightElements = selectElements('.hiddenRight');
+hiddenRightElements.forEach((el) => observer.observe(el));
+
 // Loader handling
 window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
@@ -137,6 +140,28 @@ window.addEventListener("load", () => {
         }
     });
 });
+
+function changeText(gmailAddress) {
+    navigator.clipboard.writeText(gmailAddress)
+        .then(() => {
+            var textElement = document.getElementById('contactText');
+            textElement.textContent = 'Email Copied';
+            textElement.classList.add('fade-animation');
+
+            setTimeout(function() {
+                textElement.classList.remove('fade-animation');
+            }, 1000);
+
+            setTimeout(function() {
+                textElement.textContent = 'Contact Me';
+            }, 500);
+        })
+        .catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+}
+
+
 
 // Touch screen detection (commented out as per original code)
 // var hasTouchScreen = false;

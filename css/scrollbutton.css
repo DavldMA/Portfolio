@@ -43,6 +43,7 @@
     box-sizing: border-box;
     border: 3px solid var(--text-color);
     border-radius: 23px;
+    transition: all .5s;
 }
 
 .scroll-btn .mouse>* {
@@ -58,6 +59,10 @@
     -webkit-animation: ani-mouse 2.5s linear infinite;
     -moz-animation: ani-mouse 2.5s linear infinite;
     animation: ani-mouse 2.5s linear infinite;
+}
+
+.scroll-btn .mouse:hover{
+    scale: 1.1;
 }
 
 @-webkit-keyframes ani-mouse {
