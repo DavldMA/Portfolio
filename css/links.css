@@ -1,0 +1,40 @@
+.external-link {
+    position: relative;
+    overflow: visible;
+    padding-right: 1.5em;
+    color: var(--contrast-color);
+}
+
+.external-link.big {
+    padding-left: 20px;
+    font-size: 2em;
+}
+
+.external-link .link-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    overflow: visible;
+}
+
+.external-link .link-icon svg {
+    display: block;
+    height: 100%;
+    overflow: visible;
+}
+
+.external-link .link-icon svg > * {
+    fill: currentColor;
+}
+
+.external-link .link-icon svg .arrow {
+    transition: transform 250ms ease;
+}
+
+.external-link:hover .link-icon svg .arrow {
+    transform: translate(10%,-10%);
+}

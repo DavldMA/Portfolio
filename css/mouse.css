@@ -1,37 +1,36 @@
-/* Mouse */
-
 ::-moz-selection { 
-    color: red;
-    background: yellow;
+    color: var(--text-color);
+    background: var(--contrast-color-faded);
 }
 
 ::selection {
-    color: red;
-    background: yellow;
+    color: var(--text-color);
+    background: var(--contrast-color-faded);
 }
 
 .cursor-dot {
     width: 5px;
     height: 5px;
-    background-color: black;
+    background-color: var(--text-color);
 }
 
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
     transition: width 0.3s ease, height 0.3s ease;
     animation: cursor-anim .5s infinite alternate;
+    -moz-animation: cursor-anim .5s infinite alternate;
+    -webkit-animation: cursor-anim .5s infinite alternate;
 }
 
 .cursor-outline-hover {
-    /* TODO improve the hover effect
-    width: 160px;
-    height: 160px; */
-    width: 80px;
-    height: 80px;
-}
 
+    width: 100px;
+    height: 100px; 
+    border: 2px solid var(--contrast-color-faded);
+
+}
 
 .cursor-dot, 
 .cursor-outline, .cursor-outline::after {
@@ -48,14 +47,121 @@
     content: "";
     width: 40px;
     height: 40px;
-    border: 8px solid gray;
+    border: 8px solid var(--faded-text-color);
     opacity: .5;
     animation: cursor-inline .5s infinite alternate;
+    -moz-animation: cursor-anim .5s infinite alternate;
+    -webkit-animation: cursor-anim .5s infinite alternate;
 }
 
-
-
 .expand {
+    -moz-animation: cursor-anim .5s infinite alternate;
+    -webkit-animation: cursor-anim .5s infinite alternate;
     animation: expand-click .5s forwards;
-    border: 1px solid rgb(251, 255, 0);
+    border: 2px solid var(--high-contrast);
+}
+
+@keyframes cursor-anim {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.7);
+    }
+}
+
+@-webkit-keyframes cursor-anim {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.7);
+    }
+}
+
+@-moz-keyframes cursor-anim {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.7);
+    }
+}
+
+@keyframes cursor-inline {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.4);
+    }
+}
+
+@-webkit-keyframes cursor-inline {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.4);
+    }
+}
+
+@-moz-keyframes  cursor-inline {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.4);
+    }
+}
+
+@keyframes expand-click {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(3);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes expand-click {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(3);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes expand-click {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(3);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
 }

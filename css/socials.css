@@ -1,0 +1,36 @@
+.socials {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    font-size: 0; 
+    list-style: none; 
+    padding-top: 2rem;
+    margin: 0 auto; 
+    max-width: 100%;
+    opacity: 0;
+    animation: popDown 0.5s ease-out forwards 1.7s;
+    -webkit-animation: popDown 0.5s ease-out forwards 1.7s;
+    -moz-animation: popDown 0.5s ease-out forwards 1.7s;
+}
+
+.socials > a {
+    display: inline-block; 
+    width: 60px; 
+    opacity: 1;
+    transform: scale(var(--scale, .8));
+    transition: all .3s cubic-bezier(0.38,-0.12, 0.24, 1.91); 
+    --fill-color: var(--text-color);
+}
+
+
+.socials > a:hover {
+    --scale: 1; 
+    --fill-color: var(--contrast-color-faded);
+    stroke-width: 3px;
+    stroke: var(--text-color);
+}
+
+.socials > a path {
+    fill: var(--fill-color);
+    transition: all .3s 
+}
